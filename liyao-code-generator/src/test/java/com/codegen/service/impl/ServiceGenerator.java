@@ -24,7 +24,7 @@ public class ServiceGenerator extends CodeGeneratorManager implements CodeGenera
 		
 		Map<String, Object> data = getDataMapInit(modelName, modelNameUpperCamel);
 		try {
-			// 创建 Service 接口
+			// 创建 MyBaseService 接口
 			File serviceFile = new File(PROJECT_PATH + JAVA_PATH + PACKAGE_PATH_SERVICE + customMapping
 					+ modelNameUpperCamel + "Service.java");
 			// 查看父级目录是否存在, 不存在则创建
@@ -34,7 +34,7 @@ public class ServiceGenerator extends CodeGeneratorManager implements CodeGenera
 			cfg.getTemplate("service.ftl").process(data, new FileWriter(serviceFile));
 			logger.info(modelNameUpperCamel + "Service.java 生成成功!");
 			
-			// 创建 Service 接口的实现类
+			// 创建 MyBaseService 接口的实现类
 			File serviceImplFile = new File(PROJECT_PATH + JAVA_PATH + PACKAGE_PATH_SERVICE_IMPL + customMapping
 					+ modelNameUpperCamel + "ServiceImpl.java");
 			// 查看父级目录是否存在, 不存在则创建

@@ -26,25 +26,25 @@ public class CodeGeneratorConfig {
 	protected static String MODEL_PACKAGE;
 	// 项目 Mapper 所在包
 	protected static String MAPPER_PACKAGE;
-	// 项目 Service 所在包
+	// 项目 MyBaseService 所在包
 	protected static String SERVICE_PACKAGE;
-	// 项目 Service 实现类所在包
+	// 项目 MyBaseService 实现类所在包
 	protected static String SERVICE_IMPL_PACKAGE;
 	// 项目 Controller 所在包
 	protected static String CONTROLLER_PACKAGE;
 	
-	// 生成的 Service 存放路径
+	// 生成的 MyBaseService 存放路径
 	protected static String PACKAGE_PATH_SERVICE;
-	// 生成的 Service 实现存放路径
+	// 生成的 MyBaseService 实现存放路径
 	protected static String PACKAGE_PATH_SERVICE_IMPL;
 	// 生成的 Controller 存放路径
 	protected static String PACKAGE_PATH_CONTROLLER;
 	
-	// MyMapper 插件基础接口的完全限定名
+	// MyBaseMapper 插件基础接口的完全限定名
 	protected static String MAPPER_INTERFACE_REFERENCE;
-	// 通用 Service 层 基础接口完全限定名
+	// 通用 MyBaseService 层 基础接口完全限定名
 	protected static String SERVICE_INTERFACE_REFERENCE;
-	// 基于通用 MyBatis Mapper 插件的 Service 接口的实现
+	// 基于通用 MyBatis Mapper 插件的 MyBaseService 接口的实现
 	protected static String ABSTRACT_SERVICE_CLASS_REFERENCE;
 	
 	// 模板注释中 @author

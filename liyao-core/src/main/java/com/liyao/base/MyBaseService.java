@@ -1,16 +1,18 @@
-package com.codegen.commonclass;
+package com.liyao.base;
 
 import org.apache.ibatis.exceptions.TooManyResultsException;
+import org.apache.ibatis.session.SqlSessionFactory;
 import tk.mybatis.mapper.entity.Condition;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
  * MyBaseService 层 基础接口，其他Service 接口 请继承该接口
  * Created by zhh on 2017/09/18.
  */
-public interface Service<T> {
-	
+public interface MyBaseService<T> {
+
 	/**
 	 * 插入数据
 	 * @param model

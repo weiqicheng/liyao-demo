@@ -13,7 +13,7 @@ public class CodeGeneratorMain {
 	private static final String MODEL_NAME = "User";
 	
 	private static final String[] TABLES = {
-			"tr_user"
+			"sys_dict","sys_menu","sys_role","sys_user"
 	};
 	
 	/**
@@ -31,9 +31,9 @@ public class CodeGeneratorMain {
 	public static void main(String[] args) {
 		CodeGeneratorManager cgm = new CodeGeneratorManager();
 		
-		cgm.genCodeWithSimpleName(TABLE);
+//		cgm.genCodeWithSimpleName(TABLE);
 		
-//		cgm.genCodeWithDetailName(TABLES);
+		cgm.genCodeWithDetailName(TABLES);
 		
 //		cgm.genCodeWithCustomName(TABLE, MODEL_NAME);
 	}

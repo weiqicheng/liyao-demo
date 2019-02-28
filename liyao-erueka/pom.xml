@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>com.liyao.erueka</artifactId>
+    <artifactId>liyao-erueka</artifactId>
 
     <properties>
 

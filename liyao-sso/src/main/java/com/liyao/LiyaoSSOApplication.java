@@ -4,6 +4,8 @@ import com.github.pagehelper.PageHelper;
 
 import com.liyao.common.base.MyBaseMapper;
 import org.mybatis.spring.annotation.MapperScan;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -21,7 +23,14 @@ import java.util.Properties;
 @SpringBootApplication
 @EnableAutoConfiguration
 public class LiyaoSSOApplication {
+
+    private final static Logger logger = LoggerFactory.getLogger(LiyaoSSOApplication.class);
+
+
     public static void main(String[] args) {
+        logger.info("liyao-sso启动啦！");
+        logger.error("liyao-sso启动啦！");
+        logger.debug("liyao-sso启动啦！");
         SpringApplication.run(LiyaoSSOApplication.class, args);
     }
 
@@ -35,7 +44,7 @@ public class LiyaoSSOApplication {
         properties.setProperty("offsetAsPageNum", "true");
         properties.setProperty("rowBoundsWithCount", "true");
         properties.setProperty("reasonable", "true");
-        properties.setProperty("supportMethodsArguments","true");
+        properties.setProperty("supportMethodsArguments", "true");
         //配置mysql数据库的方言
         properties.setProperty("dialect", "mysql");
         pageHelper.setProperties(properties);
@@ -44,14 +53,15 @@ public class LiyaoSSOApplication {
 
     /**
      * 自定义通用mapper配置项
+     *
      * @return
      */
     @Bean
-    public MapperScannerConfigurer mapperHelper(){
+    public MapperScannerConfigurer mapperHelper() {
         Properties properties = new Properties();
-        properties.setProperty("mappers",MyBaseMapper.class.getName());
-        properties.setProperty("IDENTITY","MYSQL"); // 数据库方言（主要用于：取回主键的方式）
-        properties.setProperty("notEmpty","false"); // insert和update中，是否判断字符串类型!=''，少数方法会用到
+        properties.setProperty("mappers", MyBaseMapper.class.getName());
+        properties.setProperty("IDENTITY", "MYSQL"); // 数据库方言（主要用于：取回主键的方式）
+        properties.setProperty("notEmpty", "false"); // insert和update中，是否判断字符串类型!=''，少数方法会用到
         properties.setProperty("style", Style.camelhump.name());
         MapperScannerConfigurer scan = new MapperScannerConfigurer();
         scan.setSqlSessionFactoryBeanName("sqlSessionFactory"); // 多数据源时，必须配置

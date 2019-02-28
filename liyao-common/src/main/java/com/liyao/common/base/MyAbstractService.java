@@ -1,4 +1,4 @@
-package com.liyao.base;
+package com.liyao.common.base;
 
 import org.apache.ibatis.exceptions.TooManyResultsException;
 import org.springframework.beans.factory.annotation.Autowired;

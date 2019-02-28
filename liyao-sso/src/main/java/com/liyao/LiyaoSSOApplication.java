@@ -1,7 +1,8 @@
 package com.liyao;
 
 import com.github.pagehelper.PageHelper;
-import com.liyao.base.MyBaseMapper;
+
+import com.liyao.common.base.MyBaseMapper;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -52,7 +53,6 @@ public class LiyaoSSOApplication {
         properties.setProperty("IDENTITY","MYSQL"); // 数据库方言（主要用于：取回主键的方式）
         properties.setProperty("notEmpty","false"); // insert和update中，是否判断字符串类型!=''，少数方法会用到
         properties.setProperty("style", Style.camelhump.name());
-
         MapperScannerConfigurer scan = new MapperScannerConfigurer();
         scan.setSqlSessionFactoryBeanName("sqlSessionFactory"); // 多数据源时，必须配置
         scan.setBasePackage("com.liyao.*.mapper");//mapper.java文件的路径

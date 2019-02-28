@@ -1,9 +1,11 @@
 package com.liyao.system.service.impl;
 
-import com.liyao.base.MyAbstractService;
-import com.liyao.system.mapper.SysUserMapper;
+
+import com.liyao.common.base.MyAbstractService;
 import com.liyao.system.model.SysUser;
 import com.liyao.system.service.SysUserService;
+import com.liyao.system.mapper.SysUserMapper;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

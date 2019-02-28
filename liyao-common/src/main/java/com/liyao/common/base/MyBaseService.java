@@ -1,10 +1,8 @@
-package com.liyao.base;
+package com.liyao.common.base;
 
 import org.apache.ibatis.exceptions.TooManyResultsException;
-import org.apache.ibatis.session.SqlSessionFactory;
 import tk.mybatis.mapper.entity.Condition;
 
-import javax.annotation.Resource;
 import java.util.List;
 
 /**

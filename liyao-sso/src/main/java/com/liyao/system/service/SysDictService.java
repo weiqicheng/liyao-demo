@@ -1,6 +1,7 @@
 package com.liyao.system.service;
 
-import com.liyao.base.MyBaseService;
+
+import com.liyao.common.base.MyBaseService;
 import com.liyao.system.model.SysDict;
 
 /**

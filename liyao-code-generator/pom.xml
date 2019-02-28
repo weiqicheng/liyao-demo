@@ -6,8 +6,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.liyao.code.generator</groupId>
-    <artifactId>liyao-code-generator</artifactId>
+    <artifactId>com.liyao.code.generator</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>

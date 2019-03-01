@@ -8,10 +8,10 @@ warn： 有些信息不是错误信息，但是也要给程序员的一些提示
 error： 错误信息。用的也比较多。
 fatal： 级别比较高了。重大错误，这种级别你可以直接停止程序了，是不应该出现的错误么！不用那么紧张，其实就是一个程度的问题。
  -->
-<Configuration status="info">
+<Configuration status="OFF">
     <!-- 定义日志存放目录 -->
-    <properties>
-        <property name="logPath">logs</property>
+    <Properties>
+        <Property name="logPath">logs</Property>
         <!-- 输出日志的格式 -->
         <!--
                 %d{yyyy-MM-dd HH:mm:ss, SSS} : 日志生产时间
@@ -24,14 +24,14 @@ fatal： 级别比较高了。重大错误，这种级别你可以直接停止�
                 %M : 日志输出所在方法名
                 hostName : 本地机器名
                 hostAddress : 本地ip地址 -->
-        <property name="PATTERN">%d{yyyy-MM-dd HH:mm:ss.SSS} [%t-%L] %-5level %logger{36} %L %M - %msg%xEx%n</property>
-    </properties>
+        <Property name="PATTERN">%d{yyyy-MM-dd HH:mm:ss.SSS} [%t-%L] %-5level %logger{36} %L %M - %msg%xEx%n</Property>
+    </Properties>
     <!--先定义所有的appender(输出器) -->
     <Appenders>
         <!--输出到控制台 -->
         <Console name="ConsoleLog" target="SYSTEM_OUT">
             <!--只输出level及以上级别的信息（onMatch），其他的直接拒绝（onMismatch） -->
-            <ThresholdFilter level="error" onMatch="ACCEPT" onMismatch="DENY" />
+            <ThresholdFilter level="debug" onMatch="ACCEPT" onMismatch="DENY" />
             <!--输出日志的格式，引用自定义模板 PATTERN -->
             <PatternLayout pattern="${PATTERN}" />
 
@@ -65,7 +65,7 @@ fatal： 级别比较高了。重大错误，这种级别你可以直接停止�
         <Root level="debug">
             <!-- 输出器,可选上面定义的任何项组合，或全选，做到可随意定制 -->
             <appender-ref ref="ConsoleLog" />
-            <!--<appender-ref ref="RollingFileLog" />-->
+         <!--   <appender-ref ref="RollingFileLog" />-->
         </Root>
         <!-- 第三方日志系统 -->
         <!--过滤掉spring和mybatis的一些无用的DEBUG信息，也可以在spring boot 的logging.level.org.springframework=FATAL设置-->

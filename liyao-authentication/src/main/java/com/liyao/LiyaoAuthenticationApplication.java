@@ -28,10 +28,10 @@ public class LiyaoAuthenticationApplication {
 
 
     public static void main(String[] args) {
+        SpringApplication.run(LiyaoAuthenticationApplication.class, args);
         logger.info("liyao-sso启动啦！");
         logger.error("liyao-sso启动啦！");
         logger.debug("liyao-sso启动啦！");
-        SpringApplication.run(LiyaoAuthenticationApplication.class, args);
     }
 
 

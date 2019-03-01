@@ -22,16 +22,16 @@ import java.util.Properties;
 @MapperScan("com.liyao.*.mapper.*")
 @SpringBootApplication
 @EnableAutoConfiguration
-public class LiyaoSSOApplication {
+public class LiyaoAuthenticationApplication {
 
-    private final static Logger logger = LoggerFactory.getLogger(LiyaoSSOApplication.class);
+    private final static Logger logger = LoggerFactory.getLogger(LiyaoAuthenticationApplication.class);
 
 
     public static void main(String[] args) {
         logger.info("liyao-sso启动啦！");
         logger.error("liyao-sso启动啦！");
         logger.debug("liyao-sso启动啦！");
-        SpringApplication.run(LiyaoSSOApplication.class, args);
+        SpringApplication.run(LiyaoAuthenticationApplication.class, args);
     }
 
 

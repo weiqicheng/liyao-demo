@@ -16,7 +16,7 @@
     <modules>
         <module>liyao-core</module>
         <module>liyao-code-generator</module>
-        <module>liyao-sso</module>
+        <module>liyao-authentication</module>
         <module>liyao-erueka</module>
         <module>liyao-common</module>
     </modules>

@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>liyao-sso</artifactId>
+    <artifactId>liyao-authentication</artifactId>
 
     <properties>
         <druid.version>1.1.13</druid.version>

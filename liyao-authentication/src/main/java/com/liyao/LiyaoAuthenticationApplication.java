@@ -4,7 +4,9 @@ import com.github.pagehelper.PageHelper;
 
 import com.liyao.common.base.MyBaseMapper;
 import org.mybatis.spring.annotation.MapperScan;
+
 import org.slf4j.Logger;
+
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -14,8 +16,8 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import tk.mybatis.mapper.code.Style;
 import tk.mybatis.spring.mapper.MapperScannerConfigurer;
-
 import java.util.Properties;
+
 
 @EnableScheduling
 @ComponentScan
@@ -24,9 +26,8 @@ import java.util.Properties;
 @EnableAutoConfiguration
 public class LiyaoAuthenticationApplication {
 
-    private final static Logger logger = LoggerFactory.getLogger(LiyaoAuthenticationApplication.class);
 
-
+    private static Logger logger = LoggerFactory.getLogger(LiyaoAuthenticationApplication.class);
     public static void main(String[] args) {
         SpringApplication.run(LiyaoAuthenticationApplication.class, args);
         logger.info("liyao-sso启动啦！");

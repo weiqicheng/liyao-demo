@@ -1,4 +1,4 @@
-package com.liyao.common.erueka;
+package com.liyao.erueka;
 
 
 import org.springframework.boot.SpringApplication;

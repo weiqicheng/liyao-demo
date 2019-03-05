@@ -11,6 +11,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.scheduling.annotation.EnableScheduling;
@@ -24,22 +25,20 @@ import java.util.Properties;
 @MapperScan("com.liyao.*.mapper.*")
 @SpringBootApplication
 @EnableAutoConfiguration
+@EnableEurekaClient
 public class LiyaoAuthenticationApplication {
 
 
     private static Logger logger = LoggerFactory.getLogger(LiyaoAuthenticationApplication.class);
     public static void main(String[] args) {
         SpringApplication.run(LiyaoAuthenticationApplication.class, args);
-        logger.info("liyao-sso启动啦！");
-        logger.error("liyao-sso启动啦！");
-        logger.debug("liyao-sso启动啦！");
     }
 
 
     //配置mybatis的分页插件pageHelper
     @Bean
     public PageHelper pageHelper() {
-        System.out.println("开始配置数据分页插件");
+        logger.info("开始配置数据分页插件");
         PageHelper pageHelper = new PageHelper();
         Properties properties = new Properties();
         properties.setProperty("offsetAsPageNum", "true");

@@ -31,7 +31,7 @@ fatal： 级别比较高了。重大错误，这种级别你可以直接停止�
         <!--输出到控制台 -->
         <Console name="ConsoleLog" target="SYSTEM_OUT">
             <!--只输出level及以上级别的信息（onMatch），其他的直接拒绝（onMismatch） -->
-            <ThresholdFilter level="debug" onMatch="ACCEPT" onMismatch="DENY" />
+            <ThresholdFilter level="info" onMatch="ACCEPT" onMismatch="DENY" />
             <!--输出日志的格式，引用自定义模板 PATTERN -->
             <PatternLayout pattern="${PATTERN}" />
 
@@ -62,7 +62,7 @@ fatal： 级别比较高了。重大错误，这种级别你可以直接停止�
     <Loggers>
         <!--建立一个默认的Root的logger，记录大于level高于warn的信息，如果这里的level高于Appenders中的，则Appenders中也是以此等级为起点，比如，这里level="fatal"，则Appenders中只出现fatal信息 -->
         <!-- 生产环境level>=warn -->
-        <Root level="debug">
+        <Root level="info">
             <!-- 输出器,可选上面定义的任何项组合，或全选，做到可随意定制 -->
             <appender-ref ref="ConsoleLog" />
          <!--   <appender-ref ref="RollingFileLog" />-->

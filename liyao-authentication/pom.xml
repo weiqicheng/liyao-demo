@@ -25,6 +25,11 @@
             <artifactId>liyao-common</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+        <!--eureka-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-eureka</artifactId>
+        </dependency>
 
         <!--通用mapper-->
         <dependency>
@@ -52,6 +57,11 @@
             <version>${druid.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
 
         <!--springboot配置，写controller必需-->
         <dependency>

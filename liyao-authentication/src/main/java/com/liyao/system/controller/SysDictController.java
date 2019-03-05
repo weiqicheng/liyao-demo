@@ -35,6 +35,7 @@ public class SysDictController {
     @ResponseBody
     public String delete(@RequestParam Integer id) {
 	    sysDictService.deleteById(id);
+        System.out.println(123456);
 	    return "";
     }
 

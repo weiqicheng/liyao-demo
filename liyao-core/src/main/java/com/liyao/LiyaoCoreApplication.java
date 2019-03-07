@@ -1,7 +1,6 @@
 package com.liyao;
 
 import org.slf4j.Logger;
-
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -17,14 +16,14 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 //@MapperScan("com.liyao.*.mapper.*")
 @SpringBootApplication
 @EnableAutoConfiguration
+@EnableEurekaClient
 @EnableFeignClients(basePackages = "com.liyao")
-public class LiyaoAuthenticationApplication {
+public class LiyaoCoreApplication {
 
 
-    private static Logger logger = LoggerFactory.getLogger(LiyaoAuthenticationApplication.class);
+    private static Logger logger = LoggerFactory.getLogger(LiyaoCoreApplication.class);
     public static void main(String[] args) {
-        logger.info("");
-        SpringApplication.run(LiyaoAuthenticationApplication.class, args);
+        SpringApplication.run(LiyaoCoreApplication.class, args);
     }
 
 }

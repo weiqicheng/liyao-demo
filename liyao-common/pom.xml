@@ -13,6 +13,8 @@
     <properties>
         <mapper.version>3.4.3</mapper.version>
         <spring.mybatis.version>1.3.0</spring.mybatis.version>
+        <pagehelper.version>4.2.1</pagehelper.version>
+        <mapper.version>3.4.3</mapper.version>
     </properties>
     <dependencies>
         <!--通用mapper-->
@@ -27,5 +29,13 @@
             <artifactId>mybatis-spring-boot-starter</artifactId>
             <version>${spring.mybatis.version}</version>
         </dependency>
+
+        <!--分页插件-->
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper</artifactId>
+            <version>${pagehelper.version}</version>
+        </dependency>
+
     </dependencies>
 </project>

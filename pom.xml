@@ -14,18 +14,13 @@
         <module>liyao-erueka</module>
         <module>liyao-common</module>
     </modules>
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.5.12.RELEASE</version>
-        <relativePath/> <!-- lookup parent from repository -->
-    </parent>
 
     <properties>
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <lombok.version>1.16.18</lombok.version>
+        <springboot.version>1.5.9.RELEASE</springboot.version>
         <springloaded.version>1.2.8.RELEASE</springloaded.version>
         <junit.version>4.12</junit.version>
     </properties>
@@ -40,7 +35,16 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <!--springboot依赖-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${springboot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
         </dependencies>
+
     </dependencyManagement>
 
     <dependencies>

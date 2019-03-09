@@ -21,10 +21,11 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 public class LiyaoAuthenticationApplication {
 
 
-    private static Logger logger = LoggerFactory.getLogger(LiyaoAuthenticationApplication.class);
+    protected static Logger logger = LoggerFactory.getLogger(LiyaoAuthenticationApplication.class);
     public static void main(String[] args) {
-        logger.info("");
+        logger.info("魏起成123");
         SpringApplication.run(LiyaoAuthenticationApplication.class, args);
+        logger.info("魏起成1234");
     }
 
 }

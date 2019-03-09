@@ -35,7 +35,6 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-            <!--springboot依赖-->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
@@ -48,6 +47,7 @@
     </dependencyManagement>
 
     <dependencies>
+
         <!-- 当前Module需要用到的jar包，按自己需求添加，如果父类已经包含了，可以不用写版本号 -->
         <!--此依赖可以减少get、set、构造函数的使用
         相关注解：
@@ -87,7 +87,24 @@
         </dependency>
     </dependencies>
     <build>
+        <finalName>liyao</finalName>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
         <plugins>
+            <!--运行读取$开头和结尾的配置文件信息-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <configuration>
+                    <delimiters>
+                        <delimit>$</delimit>
+                    </delimiters>
+                </configuration>
+            </plugin>
             <!--springboot热部署-->
             <plugin>
                 <groupId>org.springframework.boot</groupId>

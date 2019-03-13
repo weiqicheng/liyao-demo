@@ -10,11 +10,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>liyao-authentication</artifactId>
-
-    <properties>
-        <druid.version>1.1.13</druid.version>
-        <mysql.connector.java.version>5.1.42</mysql.connector.java.version>
-    </properties>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
 
     <dependencies>
 
@@ -22,43 +19,6 @@
             <groupId>com.liyao</groupId>
             <artifactId>liyao-common</artifactId>
             <version>1.0-SNAPSHOT</version>
-        </dependency>
-        <!--springCloud包开始-->
-        <!--eureka-->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-eureka</artifactId>
-        </dependency>
-        <!--feign-->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-feign</artifactId>
-        </dependency>
-        <!-- actuator监控信息完善 在eureka中的超链接可以看到配置信息-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
-        </dependency>
-        <!--springCloud包结束-->
-
-        <!--MySQL JDBC驱动 -->
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>${mysql.connector.java.version}</version>
-            <scope>runtime</scope>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/com.alibaba/druid -->
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>druid</artifactId>
-            <version>${druid.version}</version>
-        </dependency>
-
-        <!--springboot配置，写controller必需-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
     </dependencies>

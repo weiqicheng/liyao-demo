@@ -13,6 +13,7 @@
         <module>liyao-authentication</module>
         <module>liyao-erueka</module>
         <module>liyao-common</module>
+        <module>liyao-hystrix-dashboard</module>
     </modules>
 
     <properties>
@@ -100,9 +101,12 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
                 <configuration>
-                    <delimiters>
+                  <!--  <delimiters>
+                        &lt;!&ndash;表示取resources中以$*$的信息&ndash;&gt;
                         <delimit>$</delimit>
-                    </delimiters>
+                    </delimiters>-->
+                    <encoding>utf-8</encoding>
+                    <useDefaultDelimiters>true</useDefaultDelimiters>
                 </configuration>
             </plugin>
             <!--springboot热部署-->

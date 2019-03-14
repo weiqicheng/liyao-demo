@@ -51,7 +51,7 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-feign</artifactId>
         </dependency>
-        <!-- actuator监控信息完善 在eureka中的超链接可以看到配置信息-->
+        <!-- actuator监控信息完善 在eureka中的超链接可以看到配置信息，Hystrix的仪表盘也需要此依赖-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>

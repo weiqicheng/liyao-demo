@@ -1,6 +1,5 @@
 package com.liyao.authentication.feign;
 
-import feign.hystrix.FallbackFactory;
 import org.springframework.stereotype.Component;
 
 @Component // 不要忘记添加，不要忘记添加

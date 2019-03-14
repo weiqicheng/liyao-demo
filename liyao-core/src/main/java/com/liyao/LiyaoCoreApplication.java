@@ -19,7 +19,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @EnableAutoConfiguration
 @EnableEurekaClient
 @EnableFeignClients
-@EnableCircuitBreaker//对hystrixR熔断机制的支持
+@EnableCircuitBreaker//对hystrix熔断机制的支持，使用hystrix监控仪表盘时也需要此注解
 public class LiyaoCoreApplication {
 
 

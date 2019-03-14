@@ -1,7 +1,6 @@
 package com.liyao.authentication.controller;
 
 import com.liyao.authentication.feign.UserAuthenticationService;
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.PathVariable;

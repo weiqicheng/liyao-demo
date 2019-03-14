@@ -14,6 +14,7 @@
         <module>liyao-erueka</module>
         <module>liyao-common</module>
         <module>liyao-hystrix-dashboard</module>
+        <module>liyao-zuul-gateway</module>
     </modules>
 
     <properties>

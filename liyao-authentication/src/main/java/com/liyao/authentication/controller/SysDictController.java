@@ -5,11 +5,15 @@ import com.github.pagehelper.PageInfo;
 
 import com.liyao.authentication.model.SysDict;
 import com.liyao.authentication.service.SysDictService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -17,13 +21,15 @@ import java.util.List;
  *
  * Created by zhh on 2018/11/11.
  */
-@Controller
-@RequestMapping("/sysDict/")
+@Api("用户信息管理")
+@RestController
+//@RequestMapping("/sysDict/")
 public class SysDictController {
 
     @Autowired
     SysDictService sysDictService;
 
+    @ApiOperation("获取列表")
     @RequestMapping("add")
     @ResponseBody
     public String add(SysDict sysDict) {

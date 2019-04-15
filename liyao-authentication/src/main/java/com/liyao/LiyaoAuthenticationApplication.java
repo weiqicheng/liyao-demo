@@ -13,6 +13,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 
+
 @EnableScheduling
 //@MapperScan("com.liyao.*.mapper.*")
 @SpringBootApplication
@@ -26,13 +27,16 @@ public class LiyaoAuthenticationApplication {
 
 
     protected static Logger logger = LoggerFactory.getLogger(LiyaoAuthenticationApplication.class);
-
+    /**
+     * 通俗点讲，watch命令就是标记一个键，如果标记了一个键， 在提交事务前如果该键被别人修改过，那事务就会失败，这种情况通常可以在程序中
+     * 重新再尝试一次。
+     * 首先标记了键balance，然后检查余额是否足够，不足就取消标记，并不做扣减； 足够的话，就启动事务进行更新操作，
+     * 如果在此期间键balance被其它人修改， 那在提交事务（执行exec）时就会报错， 程序中通常可以捕获这类错误再重新执行一次，直到成功。
+     */
     public static void main(String[] args) {
         SpringApplication.run(LiyaoAuthenticationApplication.class, args);
-        chengge();
+
     }
 
-    public static void chengge() {
-        System.out.println("用来测试通知！");
-    }
+
 }

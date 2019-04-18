@@ -15,12 +15,18 @@ public class InvokeFeignController {
     @Value("${server.port}")
     String port;
 
+    @RequestMapping(value = "/user3/{id}", method = RequestMethod.GET)
+    public String get3(@PathVariable("id") String id) {
+        return "成哥最帅！";
+    }
+
+
     @RequestMapping(value = "/user1/{id}", method = RequestMethod.GET)
-    public String get(@PathVariable("id") String id) {
+    public String get1(@PathVariable("id") String id) {
         return userAuthenticationService.testCoreFeign(id);
     }
     @RequestMapping(value = "/user2/{id}", method = RequestMethod.GET)
-    public String getUser(@PathVariable("id") Long id) {
+    public String get2(@PathVariable("id") Long id) {
         return userAuthenticationService.get(id);
     }
 }

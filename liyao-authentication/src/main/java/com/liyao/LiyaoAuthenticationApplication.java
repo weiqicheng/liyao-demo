@@ -20,9 +20,11 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableAutoConfiguration
 @EnableEurekaClient
 @ComponentScan
-@EnableTransactionManagement // 启注解事务管理，等同于xml配置方式的 <tx:annotation-driven />
+//启注解事务管理，等同于xml配置方式的 <tx:annotation-driven />
+@EnableTransactionManagement
 @EnableFeignClients
-@EnableCircuitBreaker//对hystrix熔断机制的支持，使用hystrix监控仪表盘时也需要此注解
+//对hystrix熔断机制的支持，使用hystrix监控仪表盘时也需要此注解
+@EnableCircuitBreaker
 public class LiyaoAuthenticationApplication {
 
 

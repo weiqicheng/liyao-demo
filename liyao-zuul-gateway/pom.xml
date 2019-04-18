@@ -34,4 +34,13 @@
             <artifactId>spring-boot-devtools</artifactId>
         </dependency>
     </dependencies>
+    <build>
+        <plugins>
+            <!--maven打包插件，打包成可执行jar-->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 </project>

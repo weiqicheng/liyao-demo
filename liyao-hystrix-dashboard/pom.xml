@@ -20,23 +20,12 @@
     </dependencies>
     <build>
         <plugins>
+            <!--maven打包插件，打包成可执行jar-->
             <plugin>
-                <!--打包成可执行jar-->
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <jvmArguments>-Dfile.encoding=UTF-8</jvmArguments>
-                </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>repackage</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
         </plugins>
     </build>
-
 
 </project>

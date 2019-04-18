@@ -15,6 +15,7 @@
         <module>liyao-common</module>
         <module>liyao-hystrix-dashboard</module>
         <module>liyao-zuul-gateway</module>
+        <module>liyao-config</module>
     </modules>
 
     <properties>
@@ -24,6 +25,8 @@
         <springboot.version>1.5.9.RELEASE</springboot.version>
         <springloaded.version>1.2.8.RELEASE</springloaded.version>
         <junit.version>4.12</junit.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
 
     <dependencyManagement>
@@ -82,27 +85,54 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
                 <configuration>
-                  <!--  <delimiters>
-                        &lt;!&ndash;表示取resources中以$*$的信息&ndash;&gt;
-                        <delimit>$</delimit>
-                    </delimiters>-->
+                    <!--  <delimiters>
+                          &lt;!&ndash;表示取resources中以$*$的信息&ndash;&gt;
+                          <delimit>$</delimit>
+                      </delimiters>-->
                     <encoding>utf-8</encoding>
                     <useDefaultDelimiters>true</useDefaultDelimiters>
                 </configuration>
             </plugin>
-            <!--springboot热部署-->
+
+            <!--maven项目编译与jdk版本的设置-->
             <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.springframework</groupId>
-                        <artifactId>springloaded</artifactId>
-                        <version>${springloaded.version}</version>
-                    </dependency>
-                </dependencies>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
             </plugin>
         </plugins>
+        <!--效果跟dependencyManagement效果一样-->
+        <pluginManagement>
+            <plugins>
+                <!--maven打包插件，打包成可执行jar-->
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <!--springboot的热部署-->
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.springframework</groupId>
+                            <artifactId>springloaded</artifactId>
+                            <version>${springloaded.version}</version>
+                        </dependency>
+                    </dependencies>
+                    <configuration>
+                        <finalName>${artifactId}</finalName>
+                        <jvmArguments>-Dfile.encoding=UTF-8</jvmArguments>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>repackage</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
     </build>
-
 </project>

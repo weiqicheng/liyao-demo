@@ -8,21 +8,14 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>liyao-erueka</artifactId>
+    <artifactId>liyao-config</artifactId>
+    <name>liyao-config</name>
     <dependencies>
-        <!--添加Eureka服务器端依赖-->
+        <!-- springCloud Config -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-eureka-server</artifactId>
+            <artifactId>spring-cloud-config-server</artifactId>
         </dependency>
     </dependencies>
-    <build>
-        <plugins>
-            <!--maven打包插件，打包成可执行jar-->
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
+
 </project>

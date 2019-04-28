@@ -163,6 +163,4 @@ public class RedisCacheConfig extends CachingConfigurerSupport {
             }
         };
     }
-
-
 }

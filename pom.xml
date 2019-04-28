@@ -8,14 +8,10 @@
     <artifactId>liyao</artifactId>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>liyao-core</module>
-        <module>liyao-code-generator</module>
-        <module>liyao-authentication</module>
-        <module>liyao-erueka</module>
         <module>liyao-common</module>
-        <module>liyao-hystrix-dashboard</module>
-        <module>liyao-zuul-gateway</module>
-        <module>liyao-config</module>
+        <module>liyao-security</module>
+        <module>liyao-server</module>
+        <module>liyao-backend</module>
     </modules>
 
     <properties>

@@ -108,14 +108,6 @@
                 <plugin>
                     <groupId>org.springframework.boot</groupId>
                     <artifactId>spring-boot-maven-plugin</artifactId>
-                    <!--springboot的热部署-->
-                    <dependencies>
-                        <dependency>
-                            <groupId>org.springframework</groupId>
-                            <artifactId>springloaded</artifactId>
-                            <version>${springloaded.version}</version>
-                        </dependency>
-                    </dependencies>
                     <configuration>
                         <finalName>${artifactId}</finalName>
                         <jvmArguments>-Dfile.encoding=UTF-8</jvmArguments>

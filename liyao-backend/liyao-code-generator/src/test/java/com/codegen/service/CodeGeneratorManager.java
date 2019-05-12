@@ -1,29 +1,22 @@
 package com.codegen.service;
 
+import com.codegen.service.impl.ControllerGenerator;
+import com.codegen.service.impl.ModelAndMapperGenerator;
+import com.codegen.service.impl.ServiceGenerator;
+import com.codegen.util.StringUtils;
+import com.google.common.base.CaseFormat;
+import freemarker.template.Configuration;
+import freemarker.template.TemplateExceptionHandler;
+import org.mybatis.generator.config.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Properties;
-
-import org.mybatis.generator.config.Context;
-import org.mybatis.generator.config.JDBCConnectionConfiguration;
-import org.mybatis.generator.config.ModelType;
-import org.mybatis.generator.config.PluginConfiguration;
-import org.mybatis.generator.config.PropertyRegistry;
-import org.mybatis.generator.config.SqlMapGeneratorConfiguration;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import com.codegen.service.impl.ControllerGenerator;
-import com.codegen.service.impl.ModelAndMapperGenerator;
-import com.codegen.service.impl.ServiceGenerator;
-import com.codegen.util.StringUtils;
-import com.google.common.base.CaseFormat;
-
-import freemarker.template.Configuration;
-import freemarker.template.TemplateExceptionHandler;
 
 /**
  * 代码生成器基础项 (常量信息 & 通用方法)
@@ -132,7 +125,7 @@ public class CodeGeneratorManager extends CodeGeneratorConfig {
 	
 	/**
 	 * 表名转成映射路径
-	 * eg: gen_test_demo ==> /gen/deferredresult/demo
+	 * eg: gen_test_demo ==> /gen/test/demo
 	 * @param tableName 表名
 	 * @return
 	 */
@@ -155,7 +148,7 @@ public class CodeGeneratorManager extends CodeGeneratorConfig {
 	/**
 	 * 获取表的区分字段
 	 * @param tableName 表名, eg: gen_test_demo
-	 * @return 区分字段 eg: deferredresult
+	 * @return 区分字段 eg: test
 	 */
 	protected String getSign(String tableName) {
 		return getTableNameSplit(tableName)[1];
@@ -276,7 +269,8 @@ public class CodeGeneratorManager extends CodeGeneratorConfig {
 		SERVICE_PACKAGE = prop.getProperty("service.package");
 		SERVICE_IMPL_PACKAGE = prop.getProperty("service.impl.package");
 		CONTROLLER_PACKAGE = prop.getProperty("controller.package");
-		
+		BASE_ENTITY_CLASS = prop.getProperty("base.entity.class");
+
 		MAPPER_INTERFACE_REFERENCE = prop.getProperty("mapper.interface.reference");
 		SERVICE_INTERFACE_REFERENCE = prop.getProperty("service.interface.reference");
 		ABSTRACT_SERVICE_CLASS_REFERENCE = prop.getProperty("abstract.service.class.reference");

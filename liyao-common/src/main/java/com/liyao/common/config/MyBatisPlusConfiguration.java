@@ -13,6 +13,10 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class MyBatisPlusConfiguration {
 
+    /**
+     * sql注入器
+     * @return
+     */
     @Bean
     public ISqlInjector sqlInjector() {
         return new LogicSqlInjector();

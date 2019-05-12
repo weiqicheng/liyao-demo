@@ -25,6 +25,7 @@
         <commons.httpclient.version>3.1</commons.httpclient.version>
         <httpclient.version>4.5.4</httpclient.version>
         <zxing.version>3.3.0</zxing.version>
+        <javassist.version>3.3</javassist.version>
     </properties>
     <dependencies>
         <!-- 整合redis -->
@@ -58,7 +59,12 @@
             <artifactId>core</artifactId>
             <version>${zxing.version}</version>
         </dependency>
-
+        <!--用于反射-->
+        <dependency>
+            <groupId>javassist</groupId>
+            <artifactId>javassist</artifactId>
+            <version>${javassist.version}</version>
+        </dependency>
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
@@ -161,6 +167,12 @@
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger2</artifactId>
             <version>${springfox.swagger2.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.javassist</groupId>
+                    <artifactId>javassist</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <!--添加Swagger-UI依赖 -->
         <dependency>

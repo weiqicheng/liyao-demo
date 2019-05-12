@@ -13,7 +13,7 @@ public class CodeGeneratorMain {
 	private static final String MODEL_NAME = "User";
 	
 	private static final String[] TABLES = {
-			"sys_dict","sys_menu","sys_role","sys_user"
+			"sys_menu","sys_role","sys_user"
 	};
 	
 	/**

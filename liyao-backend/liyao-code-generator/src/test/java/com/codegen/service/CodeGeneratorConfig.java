@@ -10,7 +10,7 @@ public class CodeGeneratorConfig {
 	protected static String JDBC_USERNAME;
 	protected static String JDBC_PASSWORD;
 	protected static String JDBC_DRIVER_CLASS_NAME;
-	
+
 	// 项目在硬盘上的基础路径
 	protected static final String PROJECT_PATH = System.getProperty("user.dir");
 	// java文件路径
@@ -32,7 +32,11 @@ public class CodeGeneratorConfig {
 	protected static String SERVICE_IMPL_PACKAGE;
 	// 项目 Controller 所在包
 	protected static String CONTROLLER_PACKAGE;
-	
+
+	// 项目 父类实体类所在位置
+	protected static String BASE_ENTITY_CLASS;
+
+
 	// 生成的 MyBaseService 存放路径
 	protected static String PACKAGE_PATH_SERVICE;
 	// 生成的 MyBaseService 实现存放路径

@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.entity.GlobalConfiguration;
 import com.baomidou.mybatisplus.mapper.ISqlInjector;
 import com.baomidou.mybatisplus.mapper.LogicSqlInjector;
 import com.baomidou.mybatisplus.plugins.PaginationInterceptor;
+import com.liyao.common.handler.MyMetaObjectHandler;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -12,6 +13,7 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 public class MyBatisPlusConfiguration {
+
 
     /**
      * sql注入器
@@ -23,15 +25,15 @@ public class MyBatisPlusConfiguration {
     }
 
     @Bean
-    public GlobalConfiguration globalConfiguration() {
+    public GlobalConfiguration globalConfiguration(MyMetaObjectHandler myMetaObjectHandler) {
         GlobalConfiguration globalConfiguration = new GlobalConfiguration();
       /*  AUTO->`0`("数据库ID自增")
         INPUT->`1`(用户输入ID")
         ID_WORKER->`2`("全局唯一ID")
         UUID->`3`("全局唯一ID")*/
         globalConfiguration.setIdType(0);
-        //Oracle需要添加该项
-//        globalConfiguration.setDbType("oracle");
+
+        globalConfiguration.setDbType("mysql");
         //全局表为下划线命名设置 true
         globalConfiguration.setDbColumnUnderline(true);
         return globalConfiguration;
@@ -46,5 +48,6 @@ public class MyBatisPlusConfiguration {
         PaginationInterceptor paginationInterceptor = new PaginationInterceptor();
         return paginationInterceptor;
     }
+
 
 }

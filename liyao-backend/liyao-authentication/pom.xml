@@ -13,13 +13,6 @@
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <dependencies>
-        <!-- spring security依赖 -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
-        </dependency>
-    </dependencies>
     <build>
         <plugins>
             <!--maven打包插件，打包成可执行jar-->

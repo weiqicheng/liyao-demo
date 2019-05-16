@@ -4,16 +4,18 @@ import com.baomidou.mybatisplus.entity.GlobalConfiguration;
 import com.baomidou.mybatisplus.mapper.ISqlInjector;
 import com.baomidou.mybatisplus.mapper.LogicSqlInjector;
 import com.baomidou.mybatisplus.plugins.PaginationInterceptor;
+import com.github.pagehelper.PageHelper;
 import com.liyao.common.handler.MyMetaObjectHandler;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
+import java.util.Properties;
 
 /**
  * mybatisPlus配置
  */
 @Configuration
 public class MyBatisPlusConfiguration {
-
 
     /**
      * sql注入器
@@ -49,5 +51,22 @@ public class MyBatisPlusConfiguration {
         return paginationInterceptor;
     }
 
+    /**
+     * 配置mybatis的分页插件pageHelper
+     * @return
+     */
+    @Bean
+    public PageHelper pageHelper() {
+        PageHelper pageHelper = new PageHelper();
+        Properties properties = new Properties();
+        properties.setProperty("offsetAsPageNum", "true");
+        properties.setProperty("rowBoundsWithCount", "true");
+        properties.setProperty("reasonable", "true");
+        properties.setProperty("supportMethodsArguments", "true");
+        //配置mysql数据库的方言
+        properties.setProperty("dialect", "mysql");
+        pageHelper.setProperties(properties);
+        return pageHelper;
+    }
 
 }

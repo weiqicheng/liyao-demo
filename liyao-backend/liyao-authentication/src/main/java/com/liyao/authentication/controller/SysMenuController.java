@@ -24,40 +24,4 @@ public class SysMenuController {
     @Autowired
     SysMenuService sysMenuService;
 
-    @RequestMapping("add")
-    @ResponseBody
-    public String add(SysMenu sysMenu) {
-        sysMenuService.save(sysMenu);
-        return "";
-    }
-
-    @RequestMapping("delete")
-    @ResponseBody
-    public String delete(@RequestParam Integer id) {
-	    sysMenuService.deleteById(id);
-	    return "";
-    }
-
-    @RequestMapping("update")
-    @ResponseBody
-    public String update(SysMenu sysMenu) {
-	    sysMenuService.update(sysMenu);
-	    return "";
-    }
-
-    @RequestMapping("detail")
-    @ResponseBody
-    public String detail(@RequestParam Integer id) {
-        SysMenu sysMenu = sysMenuService.findById(id);
-        return sysMenu.toString();
-    }
-
-    @RequestMapping("list")
-    @ResponseBody
-    public String list(@RequestParam(defaultValue = "0") Integer page, @RequestParam(defaultValue = "0") Integer size) {
-        PageHelper.startPage(page, size);
-        List<SysMenu> list = sysMenuService.findAll();
-        PageInfo pageInfo = new PageInfo(list);
-        return list.toString();
-    }
 }

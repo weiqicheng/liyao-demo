@@ -11,9 +11,10 @@
 
     <artifactId>liyao-security-browser</artifactId>
     <dependencies>
+        <!-- 引入freemarker包 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+            <artifactId>spring-boot-starter-freemarker</artifactId>
         </dependency>
         <!-- 热部署模块 -->
         <dependency>

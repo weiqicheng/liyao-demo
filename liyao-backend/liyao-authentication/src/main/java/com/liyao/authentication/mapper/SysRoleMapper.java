@@ -1,8 +1,8 @@
 package com.liyao.authentication.mapper;
 
 
+import com.baomidou.mybatisplus.mapper.BaseMapper;
 import com.liyao.authentication.model.SysRole;
-import com.liyao.common.base.MyBaseMapper;
 
-public interface SysRoleMapper extends MyBaseMapper<SysRole> {
+public interface SysRoleMapper extends BaseMapper<SysRole>{
 }

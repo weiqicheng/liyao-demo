@@ -34,7 +34,7 @@ public class MyConstarintValidator implements ConstraintValidator<MyConstraint,O
      */
     @Override
     public boolean isValid(Object value, ConstraintValidatorContext context) {
-        boolean b = sysDictService.findById(1).getDictName().equalsIgnoreCase(value + "");
+        boolean b = sysDictService.selectById(1).getDictName().equalsIgnoreCase(value + "");
         System.out.println(value);
         //返回true成功，返回false失败
         return b;

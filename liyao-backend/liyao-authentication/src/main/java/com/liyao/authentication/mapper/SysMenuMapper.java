@@ -1,8 +1,8 @@
 package com.liyao.authentication.mapper;
 
 
+import com.baomidou.mybatisplus.mapper.BaseMapper;
 import com.liyao.authentication.model.SysMenu;
-import com.liyao.common.base.MyBaseMapper;
 
-public interface SysMenuMapper extends MyBaseMapper<SysMenu> {
+public interface SysMenuMapper extends BaseMapper<SysMenu>{
 }

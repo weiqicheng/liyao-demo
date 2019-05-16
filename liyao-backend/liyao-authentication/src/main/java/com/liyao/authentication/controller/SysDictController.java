@@ -37,7 +37,6 @@ public class SysDictController {
     }
 
     @RequestMapping("delete")
-    @ResponseBody
     public String delete(@RequestParam Integer id) {
         sysDictService.deleteById(id);
         System.out.println(123456);
@@ -45,24 +44,21 @@ public class SysDictController {
     }
 
     @RequestMapping("update")
-    @ResponseBody
     public String update(SysDict sysDict) {
-        sysDictService.update(sysDict);
+        sysDictService.updateById(sysDict);
         return "";
     }
 
     @RequestMapping("detail")
-    @ResponseBody
     public String detail(@RequestParam Integer id) {
-        SysDict sysDict = sysDictService.findById(id);
+        SysDict sysDict = sysDictService.selectById(id);
         return sysDict.toString();
     }
 
     @RequestMapping("list")
-    @ResponseBody
     public String list(@RequestParam(defaultValue = "0") Integer page, @RequestParam(defaultValue = "0") Integer size) {
         PageHelper.startPage(page, size);
-        List<SysDict> list = sysDictService.findAll();
+        List<SysDict> list = null;
         PageInfo pageInfo = new PageInfo(list);
         return list.toString();
     }

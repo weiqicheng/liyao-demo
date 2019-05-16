@@ -13,7 +13,6 @@
     <modules>
         <module>liyao-authentication</module>
         <module>liyao-core</module>
-        <module>liyao-code-generator</module>
         <module>liyao-zuul-gateway</module>
     </modules>
     <dependencies>

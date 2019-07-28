@@ -14,12 +14,19 @@
         <module>liyao-authentication</module>
         <module>liyao-core</module>
         <module>liyao-zuul-gateway</module>
+        <module>liyao-sms</module>
     </modules>
     <dependencies>
         <dependency>
             <groupId>com.liyao</groupId>
             <artifactId>liyao-common</artifactId>
             <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <!--腾讯云的sms依赖-->
+        <dependency>
+            <groupId>com.github.qcloudsms</groupId>
+            <artifactId>qcloudsms</artifactId>
+            <version>1.0.6</version>
         </dependency>
     </dependencies>
 </project>

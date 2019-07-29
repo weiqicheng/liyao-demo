@@ -1,26 +1,16 @@
 package com.liyao.common.util;
 
-
-
-import java.util.HashMap;
-import java.util.Map;
-
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
-
-import org.springframework.web.multipart.MultipartFile;
-
 import com.alibaba.fastjson.JSON;
-
-import javassist.ClassClassPath;
-import javassist.ClassPool;
-import javassist.CtClass;
-import javassist.CtMethod;
-import javassist.Modifier;
-import javassist.NotFoundException;
+import javassist.*;
 import javassist.bytecode.CodeAttribute;
 import javassist.bytecode.LocalVariableAttribute;
 import javassist.bytecode.MethodInfo;
+import org.springframework.web.multipart.MultipartFile;
+
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * 获取AOP代理的方法的参数名称和参数值工具类
@@ -48,6 +38,10 @@ public class LogAopUtil {
         }
         int pos = Modifier.isStatic(cm.getModifiers()) ? 0 : 1;
         for (int i = 0; i < cm.getParameterTypes().length; i++) {
+            if (args[i] instanceof ServletRequest || args[i] instanceof ServletResponse || args[i] instanceof MultipartFile) {
+                // 因为request和response序列化后会出错,所以不添加进参数
+                continue;
+            }
             nameAndArgs.put(attr.variableName(i + pos), args[i]);// paramNames即参数名
         }
 
@@ -83,5 +77,4 @@ public class LogAopUtil {
         }
         return sb;
     }
-
 }

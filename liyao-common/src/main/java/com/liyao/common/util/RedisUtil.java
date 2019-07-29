@@ -4,10 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
-import redis.clients.jedis.JedisCluster;
 import redis.clients.jedis.exceptions.JedisException;
 
-import java.security.cert.TrustAnchor;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -211,7 +209,7 @@ public class RedisUtil {
      * @param map 对应多个键值
      * @return true 成功 false 失败
      */
-    public boolean hmset(String key, Map<String, Object> map) {
+    public boolean hmset(String key, Map<Object, Object> map) {
         try {
             redisTemplate.opsForHash().putAll(key, map);
             return true;
@@ -327,6 +325,22 @@ public class RedisUtil {
         return redisTemplate.opsForHash().increment(key, item, -by);
     }
 
+    /**
+     * HashSet
+     *
+     * @param key 键
+     * @return true 成功 false 失败
+     */
+    public Long hlen(String key) {
+        try {
+            Long size = redisTemplate.opsForHash().size(key);
+            return size;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return 0L;
+        }
+    }
+
     //============================set=============================
 
     /**
@@ -338,6 +352,26 @@ public class RedisUtil {
     public Set<Object> sGet(String key) {
         try {
             return redisTemplate.opsForSet().members(key);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    /**
+     * 返回给定所有给定集合的交集。
+     *
+     * @param keys 键 要进行取交集的key ,key的数量必须大于两个！
+     * @return
+     */
+    public Set<Object> sSinter(List<String> keys) {
+        if (keys.size() < 2) {
+            return null;
+        }
+        try {
+            //求交集
+            Set<Object> sinter = redisTemplate.opsForSet().intersect(keys.get(0), keys);
+            return sinter;
         } catch (Exception e) {
             e.printStackTrace();
             return null;
@@ -363,13 +397,13 @@ public class RedisUtil {
     /**
      * 将数据放入set缓存
      *
-     * @param key    键
-     * @param values 值 可以是多个
+     * @param key 键
+     * @param set 值 可以是多个
      * @return 成功个数
      */
-    public long sSet(String key, Object... values) {
+    public <T> long sSet(String key, Set<T> set) {
         try {
-            return redisTemplate.opsForSet().add(key, values);
+            return redisTemplate.opsForSet().add(key, set.toArray());
         } catch (Exception e) {
             e.printStackTrace();
             return 0;
@@ -445,6 +479,22 @@ public class RedisUtil {
         }
     }
 
+
+    /**
+     * 获取list缓存的内容
+     *
+     * @param key 键
+     * @return
+     */
+    public Long lLen(String key) {
+        try {
+            return redisTemplate.opsForList().size(key);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
     /**
      * 获取list缓存的长度
      *
@@ -483,7 +533,7 @@ public class RedisUtil {
      * @param value 值
      * @return
      */
-    public boolean lSet(String key, Object value) {
+    public boolean lSetOne(String key, Object value) {
         try {
             redisTemplate.opsForList().rightPush(key, value);
             return true;
@@ -501,7 +551,7 @@ public class RedisUtil {
      * @param time  时间(秒)
      * @return
      */
-    public boolean lSet(String key, Object value, long time) {
+    public boolean lSetOne(String key, Object value, long time) {
         try {
             redisTemplate.opsForList().rightPush(key, value);
             if (time > 0) expire(key, time);
@@ -519,9 +569,11 @@ public class RedisUtil {
      * @param value 值
      * @return
      */
-    public boolean lSet(String key, List<Object> value) {
+    public <T> boolean lSetList(String key, List<T> value) {
         try {
-            redisTemplate.opsForList().rightPushAll(key, value);
+            if (value != null && value.size() != 0) {
+                redisTemplate.opsForList().rightPushAll(key, value.toArray());
+            }
             return true;
         } catch (Exception e) {
             e.printStackTrace();
@@ -537,10 +589,14 @@ public class RedisUtil {
      * @param time  时间(秒)
      * @return
      */
-    public boolean lSet(String key, List<Object> value, long time) {
+    public <T> boolean lSetList(String key, List<T> value, long time) {
         try {
-            redisTemplate.opsForList().rightPushAll(key, value);
-            if (time > 0) expire(key, time);
+            if (value != null && value.size() != 0) {
+                redisTemplate.opsForList().rightPushAll(key, value.toArray());
+                if (time > 0) {
+                    expire(key, time);
+                }
+            }
             return true;
         } catch (Exception e) {
             e.printStackTrace();

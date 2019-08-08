@@ -4,6 +4,7 @@ import com.github.qcloudsms.SmsMultiSender;
 import com.github.qcloudsms.SmsMultiSenderResult;
 import com.github.qcloudsms.httpclient.HTTPException;
 import com.liyao.common.util.HttpClientUtils;
+import org.apache.commons.lang.StringUtils;
 import org.json.JSONException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,6 +19,8 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.Period;
 
 /**
  * 消息服务
@@ -54,14 +57,27 @@ public class LiyaoSMSApplication {
      */
     private static String smsSign="weimaomao211";
 
+    private static String loveWordUrl="http://guozhivip.com/nav/api/api.php";
+
     private static Logger logger = LoggerFactory.getLogger(LiyaoSMSApplication.class);
     public static void main(String[] args) {
-//        SpringApplication.run(LiyaoSMSApplication.class, args);
-        String loveWord = HttpClientUtils.httpGet("http://guozhivip.com/nav/api/api.php");
-        System.out.println(loveWord.substring(loveWord.indexOf("\"")+1,loveWord.lastIndexOf("\"")));
+        try {
+            String loveWord = HttpClientUtils.httpGet(loveWordUrl);
+            if (StringUtils.isNotEmpty(loveWord)) {
+                if (loveWord.indexOf("document.write") >= 0) {
+                    loveWord = loveWord.substring(loveWord.indexOf("\"") + 1, loveWord.lastIndexOf("——《"));
+                }
+            } else {
+                loveWord = "我爱你！";
+            }
+            //相爱开始时间
+            LocalDate loveBeginDate = LocalDate.of(2013, 04, 23);
+            Period p = Period.between(loveBeginDate, LocalDate.now());
+            String loveDate = String.format("%s年%s月%s天", p.getYears(), p.getMonths(), p.getDays());
+            //天气情况处理
 
-      /*  try {
-            String[] params = {"1","天气晴","爱你哦"};
+
+            String[] params = {loveDate, "天气晴", loveWord};
             SmsMultiSender msender = new SmsMultiSender(appId, appKey);
             // 签名参数未提供或者为空时，会使用默认签名发送短信
             SmsMultiSenderResult result = msender.sendWithParam("86", phoneNumbers, templateId, params, smsSign, "", "");
@@ -75,8 +91,7 @@ public class LiyaoSMSApplication {
         } catch (IOException e) {
             // 网络 IO 错误
             e.printStackTrace();
-        }*/
-
+        }
     }
 
 }

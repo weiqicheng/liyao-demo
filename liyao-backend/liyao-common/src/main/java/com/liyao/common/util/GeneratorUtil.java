@@ -1,78 +1,10 @@
 package com.liyao.common.util;
 
-import com.baomidou.mybatisplus.generator.AutoGenerator;
-import com.baomidou.mybatisplus.generator.config.*;
-import com.baomidou.mybatisplus.generator.config.converts.MySqlTypeConvert;
-import com.baomidou.mybatisplus.generator.config.rules.DbColumnType;
-import com.baomidou.mybatisplus.generator.config.rules.DbType;
-import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
-import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
+
+import com.baomidou.mybatisplus.annotation.DbType;
+import com.baomidou.mybatisplus.core.config.GlobalConfig;
 
 public class GeneratorUtil {
-    /*public static void main(String[] args) {
-        AutoGenerator mpg = new AutoGenerator();
-
-        // 全局配置
-        GlobalConfig gc = new GlobalConfig();
-        //执行完成后是否自动打开文件夹
-//        gc.setOpen(false);
-        gc.setOutputDir("D://chengge");
-        gc.setFileOverride(true);
-        gc.setActiveRecord(true);
-        gc.setEnableCache(false);// XML 二级缓存
-        gc.setBaseResultMap(true);// XML ResultMap
-        gc.setBaseColumnList(false);// XML columList
-        gc.setAuthor("WeiMaoMao");
-        mpg.setGlobalConfig(gc);
-
-        // 数据源配置
-        DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setDbType(DbType.MYSQL);
-        *//*dsc.setTypeConvert(new MySqlTypeConvert() {
-            // 自定义数据库表字段类型转换【可选】
-            @Override
-            public DbColumnType processTypeConvert(String fieldType) {
-                if (fieldType.toLowerCase().contains("bit")) {
-                    return DbColumnType.BOOLEAN;
-                }
-                if (fieldType.toLowerCase().contains("number")) {
-                    return DbColumnType.LONG;
-                }
-                return super.processTypeConvert(fieldType);
-            }
-        });*//*
-        dsc.setDriverName("com.mysql.jdbc.Driver");
-        dsc.setUsername("admin");
-        dsc.setPassword("123456");
-        dsc.setUrl("jdbc:mysql://39.105.164.164:3306/liyao_core?useUnicode=true&characterEncoding=utf-8&useSSL=false");
-        mpg.setDataSource(dsc);
-
-        // 策略配置
-        StrategyConfig strategy = new StrategyConfig();
-        strategy.setTablePrefix(new String[]{"ly_"});// 此处可以修改为您的表前缀
-
-        strategy.setNaming(NamingStrategy.underline_to_camel);// 表名生成策略
-        strategy.setInclude(new String[]{"ly_sms_log"}); // 需要生成的表
-
-        mpg.setStrategy(strategy);
-
-        // 包配置
-        PackageConfig pc = new PackageConfig();
-        pc.setParent("com.liyao");
-        pc.setMapper("mapper");
-        pc.setController("controller");
-        mpg.setPackageInfo(pc);
-        // 关闭默认 xml 生成，调整生成 至 根目录
-//        TemplateConfig tc = new TemplateConfig();
-//        tc.setEntity("/templates/vm/entity.java.vm");
-//        mpg.setTemplate(tc);
-
-        // 执行生成
-        mpg.execute();
-
-    }
-*/
-
 
     /**
      * <p>
@@ -87,9 +19,9 @@ public class GeneratorUtil {
         // 全局配置
         GlobalConfig gc = new GlobalConfig();
         gc.setAuthor("WeiMaoMao");
-        gc.setOutputDir("D://chengge");
+        gc.setOutputDir("D://temp");
         gc.setFileOverride(false);// 是否覆盖同名文件，默认是false
-        gc.setActiveRecord(true);// 不需要ActiveRecord特性的请改为false
+        gc.setActiveRecord(true);// 不需要ActiveRecord特性的请改为false,这个主要是实体类也可以进行增删改查
         gc.setEnableCache(false);// XML 二级缓存
         gc.setBaseResultMap(true);// XML ResultMap
         gc.setBaseColumnList(false);// XML columList
@@ -122,14 +54,14 @@ public class GeneratorUtil {
         // 策略配置
         StrategyConfig strategy = new StrategyConfig();
         // strategy.setCapitalMode(true);// 全局大写命名 ORACLE 注意
-        strategy.setTablePrefix(new String[]{"ly_"});// 此处可以修改为您的表前缀
+        strategy.setTablePrefix(new String[]{"core_"});// 此处可以修改为您的表前缀
         strategy.setNaming(NamingStrategy.underline_to_camel);// 表名生成策略
-        strategy.setInclude(new String[]{"ly_sms_log"}); // 需要生成的表
+        strategy.setInclude(new String[]{"core_sms_log"}); // 需要生成的表
         // strategy.setExclude(new String[]{"test"}); // 排除生成的表
         // 自定义实体父类
          strategy.setSuperEntityClass("com.liyao.common.base.BaseEntity");
         // 自定义实体，公共字段
-         strategy.setSuperEntityColumns(new String[] { "id", "create_by", "create_date", "update_by", "update_date", "is_delete" });
+         strategy.setSuperEntityColumns(new String[] { "id", "create_by", "create_date", "update_by", "update_date", "is_delete" ,"version"});
         // 自定义 mapper 父类
         // strategy.setSuperMapperClass("com.baomidou.demo.TestMapper");
         // 自定义 service 父类

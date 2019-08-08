@@ -1,4 +1,4 @@
-package com.liyao.backend.core;
+package com.liyao.backend.core.controller;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Value;

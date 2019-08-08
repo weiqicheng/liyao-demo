@@ -1,11 +1,15 @@
 package com.liyao.common.base;
 
+import com.baomidou.mybatisplus.extension.activerecord.Model;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 
+import java.io.Serializable;
 import java.util.Date;
 @Data
-public class BaseEntity {
+public abstract class BaseEntity<T extends Model<?>> extends Model<T> {
     /**
      * 主键
      */
@@ -35,4 +39,9 @@ public class BaseEntity {
      * 是否删除
      */
     private String isDelete;
+
+    @Override
+    protected Serializable pkVal() {
+        return id;
+    }
 }

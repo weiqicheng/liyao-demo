@@ -61,7 +61,7 @@ public class WeatherScheduler {
             String loveWord = HttpClientUtils.httpGet(loveWordUrl);
             if (StringUtils.isNotEmpty(loveWord)) {
                 if (loveWord.indexOf("document.write") >= 0) {
-                    loveWord = loveWord.substring(loveWord.indexOf("\"") + 1, loveWord.lastIndexOf("\""));
+                    loveWord = loveWord.substring(loveWord.indexOf("\"") + 1, loveWord.lastIndexOf("——《"));
                 }
             } else {
                 loveWord = "我爱你！";

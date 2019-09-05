@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="erueka" />
+        <module name="liyao-authentication" />
+        <module name="liyao-code-generator" />
+        <module name="liyao-common" />
+        <module name="liyao-config" />
+        <module name="liyao-core" />
+        <module name="liyao-erueka" />
+        <module name="liyao-hystrix-dashboard" />
+        <module name="liyao-security-authentication" />
+        <module name="liyao-security-core" />
+        <module name="liyao-security-demo" />
+        <module name="liyao-sms" />
+        <module name="liyao-zuul-gateway" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="erueka" target="1.7" />
+      <module name="liyao" target="1.8" />
+      <module name="liyao-authentication" target="1.8" />
+      <module name="liyao-backend" target="1.8" />
+      <module name="liyao-code-generator" target="1.8" />
+      <module name="liyao-common" target="1.8" />
+      <module name="liyao-config" target="1.8" />
+      <module name="liyao-core" target="1.8" />
+      <module name="liyao-erueka" target="1.8" />
+      <module name="liyao-hystrix-dashboard" target="1.8" />
+      <module name="liyao-security" target="1.8" />
+      <module name="liyao-security-app" target="1.8" />
+      <module name="liyao-security-authentication" target="1.8" />
+      <module name="liyao-security-browser" target="1.8" />
+      <module name="liyao-security-core" target="1.8" />
+      <module name="liyao-security-demo" target="1.8" />
+      <module name="liyao-server" target="1.8" />
+      <module name="liyao-sms" target="1.8" />
+      <module name="liyao-zuul-gateway" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

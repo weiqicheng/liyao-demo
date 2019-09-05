@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/liyao.iml" filepath="$PROJECT_DIR$/liyao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/liyao-backend/liyao-authentication/liyao-authentication.iml" filepath="$PROJECT_DIR$/liyao-backend/liyao-authentication/liyao-authentication.iml" />
+      <module fileurl="file://$PROJECT_DIR$/liyao-backend/liyao-backend.iml" filepath="$PROJECT_DIR$/liyao-backend/liyao-backend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/liyao-backend/liyao-code-generator/liyao-code-generator.iml" filepath="$PROJECT_DIR$/liyao-backend/liyao-code-generator/liyao-code-generator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/liyao-common/liyao-common.iml" filepath="$PROJECT_DIR$/liyao-common/liyao-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/liyao-server/liyao-config/liyao-config.iml" filepath="$PROJECT_DIR$/liyao-server/liyao-config/liyao-config.iml" />
+      <module fileurl="file://$PROJECT_DIR$/liyao-backend/liyao-core/liyao-core.iml" filepath="$PROJECT_DIR$/liyao-backend/liyao-core/liyao-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/liyao-server/liyao-erueka/liyao-erueka.iml" filepath="$PROJECT_DIR$/liyao-server/liyao-erueka/liyao-erueka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/liyao-server/liyao-hystrix-dashboard/liyao-hystrix-dashboard.iml" filepath="$PROJECT_DIR$/liyao-server/liyao-hystrix-dashboard/liyao-hystrix-dashboard.iml" />
+      <module fileurl="file://$PROJECT_DIR$/liyao-security/liyao-security.iml" filepath="$PROJECT_DIR$/liyao-security/liyao-security.iml" />
+      <module fileurl="file://$PROJECT_DIR$/liyao-security/liyao-security-authentication/liyao-security-authentication.iml" filepath="$PROJECT_DIR$/liyao-security/liyao-security-authentication/liyao-security-authentication.iml" />
+      <module fileurl="file://$PROJECT_DIR$/liyao-security/liyao-security-core/liyao-security-core.iml" filepath="$PROJECT_DIR$/liyao-security/liyao-security-core/liyao-security-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/liyao-security/liyao-security-demo/liyao-security-demo.iml" filepath="$PROJECT_DIR$/liyao-security/liyao-security-demo/liyao-security-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/liyao-server/liyao-server.iml" filepath="$PROJECT_DIR$/liyao-server/liyao-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/liyao-backend/liyao-sms/liyao-sms.iml" filepath="$PROJECT_DIR$/liyao-backend/liyao-sms/liyao-sms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/liyao-backend/liyao-zuul-gateway/liyao-zuul-gateway.iml" filepath="$PROJECT_DIR$/liyao-backend/liyao-zuul-gateway/liyao-zuul-gateway.iml" />
+    </modules>
+  </component>
+</project>

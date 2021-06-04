@@ -19,7 +19,7 @@
         <lombok.version>1.16.18</lombok.version>
         <fastjson.version>1.2.31</fastjson.version>
         <commons.httpclient.version>3.1</commons.httpclient.version>
-        <httpclient.version>4.5.4</httpclient.version>
+        <httpclient.version>4.5.13</httpclient.version>
         <zxing.version>3.3.0</zxing.version>
         <javassist.version>3.3</javassist.version>
         <commons-lang3.version>3.9</commons-lang3.version>

@@ -23,7 +23,7 @@
         <zxing.version>3.3.0</zxing.version>
         <javassist.version>3.3</javassist.version>
         <commons-lang3.version>3.9</commons-lang3.version>
-        <poi.version>4.1.0</poi.version>
+        <poi.version>4.1.1</poi.version>
     </properties>
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
